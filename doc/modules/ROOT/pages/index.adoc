@@ -78,7 +78,10 @@ image::screenshots/add-firewall-rule.png[Adding firewall rule in a PowerShell wi
 
 === Kerberos configuration file
 
-Java searches its Kerberos configuration in the `krb5.ini` file.
+Java searches the Kerberos realms configuration in the `krb5.ini` file on Windows.
+The file contains the address of the Key Distribution Center (KDC) - i.e. Active
+Directory server in our case.
+
 So let's create one simple configuration file `C:\Windows\krb5.ini`
 on both servers.
 
@@ -173,6 +176,18 @@ a new Hazelcast cluster with both members.
 
 .Screenshot - Running Hazelcast cluster
 image::screenshots/client-running.png[Running Hazelcast cluster.]
+
+Within the `security` configuration, we defined which realm is used for
+the member-to-member authentication (`kerberosRealm`).
+
+The security realm itself has two configuration parts:
+
+- `authentication` - responsible for verifying incoming connections and mapping client roles;
+- `identity` - defines a member's credentials - used to prove its own identity to other members.
+
+The most important options in the `kerberos` authentication and `kerberos` identity configurations
+are the `principal` (defines own Kerberos name) and `keytab-file` (file containing secrets of
+given principal).
 
 === Simple Kerberos configuration warnings
 
@@ -399,4 +414,4 @@ The client authorization was based on group membership defined in the Active Dir
 == See Also
 
 - https://docs.hazelcast.org/docs/4.1/manual/html-single/index.html#kerberos-authentication[Kerberos authentication] section in Hazelcast Reference manual
--
+- https://docs.oracle.com/en/java/javase/11/docs/api/jdk.security.auth/com/sun/security/auth/module/Krb5LoginModule.html[Krb5LoginModule] documentation
