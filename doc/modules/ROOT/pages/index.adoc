@@ -70,7 +70,7 @@ port numbers (`5701-5703`). You can use the following PowerShell command:
 
 [source,powershell]
 ----
-include::../../../../allow-hazelcast-port.ps1[]
+include::example$allow-hazelcast-port.ps1[]
 ----
 
 .Screenshot - Adding Windows Firewall Rule in PowerShell
@@ -88,7 +88,7 @@ on both servers.
 .C:\Windows\krb5.ini
 [source,powershell]
 ----
-include::../../../../krb5.ini[]
+include::example$krb5.ini[]
 ----
 
 NOTE: Kerberos protocol checks are often case-sensitive. Use the proper form
@@ -156,7 +156,7 @@ Following configuration is for the application server:
 .C:\hazelcast-enterprise-4.1\demo\hazelcast.yml
 [source,yaml]
 ----
-include::../../../../hazelcast-simple.yml[]
+include::example$hazelcast-simple.yml[]
 ----
 
 Use similar configuration on the domain controller. Just update principal name and
@@ -259,7 +259,7 @@ as a member of the "Acme Cache Czechia" group.
 
 [source,powershell]
 ----
-include::../../../../create-groups-and-map-user.ps1[]
+include::example$create-groups-and-map-user.ps1[]
 ----
 
 === Re-configure members
@@ -272,7 +272,7 @@ interface.
 .C:\hazelcast-enterprise-4.1\demo\hazelcast.yml
 [source,yaml]
 ----
-include::../../../../hazelcast.yml[]
+include::example$hazelcast.yml[]
 ----
 
 What's new here are the explicitly defined `Krb5LoginModule` configurations
@@ -337,7 +337,7 @@ within the Hazelcast installation.
 .C:\hazelcast-enterprise-4.1\demo\hazelcast-client.yml
 [source,yaml]
 ----
-include::../../../../hazelcast-client.yml[]
+include::example$hazelcast-client.yml[]
 ----
 
 The Kerberos configuration on the client side is similar to the member configuration.
@@ -386,7 +386,7 @@ Create the new `debug-logging.properties` file beside the batch file:
 
 [source,properties]
 ----
-include::../../../../debug-logging.properties[]
+include::example$debug-logging.properties[]
 ----
 
 You can also add the `debug` option to `Krb5LoginModule` configuration. E.g.
