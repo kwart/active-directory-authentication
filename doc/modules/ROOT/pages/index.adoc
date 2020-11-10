@@ -1,7 +1,7 @@
 :github-address: https://github.com/hazelcast-guides/active-directory-authentication
 :templates-url: templates:ROOT:page$/
 
-= Active Directory authentication
+= Active Directory Authentication
 
 This guide will get you started with the Hazelcast IMDG Enterprise Kerberos authentication
 in Microsoft Active Directory domains.
