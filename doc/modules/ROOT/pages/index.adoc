@@ -1,5 +1,5 @@
 :github-address: https://github.com/hazelcast-guides/active-directory-authentication
-:templates-url: https://raw.githubusercontent.com/hazelcast-guides/adoc-templates/master
+:templates-url: templates:ROOT:page$/
 
 = Active Directory authentication
 
@@ -31,13 +31,13 @@ starts a domain for you on few clicks:
 * https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm
 
 .Screenshot - Azure AD template on GitHub
-image::screenshots/azure-ad-template-on-github.png[Azure AD template on GitHub.]
+image::azure-ad-template-on-github.png[Azure AD template on GitHub.]
 
 .Screenshot - AD domain template parameters on Azure
-image::screenshots/azure-deployment.png[Azure AD deployment parameters.]
+image::azure-deployment.png[Azure AD deployment parameters.]
 
 .Screenshot - AD domain deployment on Azure
-image::screenshots/azure-deployed-ad-domain.png[Deployed AD domain.]
+image::azure-deployed-ad-domain.png[Deployed AD domain.]
 
 == Environment
 
@@ -74,7 +74,7 @@ include::../../../../allow-hazelcast-port.ps1[]
 ----
 
 .Screenshot - Adding Windows Firewall Rule in PowerShell
-image::screenshots/add-firewall-rule.png[Adding firewall rule in a PowerShell window.]
+image::add-firewall-rule.png[Adding firewall rule in a PowerShell window.]
 
 === Kerberos configuration file
 
@@ -122,7 +122,7 @@ Commands used:
 - https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass[ktpass]
 
 .Screenshot - New accounts in AD users GUI
-image::screenshots/ad-new-accounts-for-members.png[Users and groups in Active Directory.]
+image::ad-new-accounts-for-members.png[Users and groups in Active Directory.]
 
 The `hz/10.0.0.10@ACME.COM` and `hz/10.0.0.11@ACME.COM` are Service Principal Names (SPN)
 and we will reference them in the Hazelcast member configuration.
@@ -175,7 +175,7 @@ Starting Hazelcast members on both servers should now result in forming
 a new Hazelcast cluster with both members.
 
 .Screenshot - Running Hazelcast cluster
-image::screenshots/client-running.png[Running Hazelcast cluster.]
+image::client-running.png[Running Hazelcast cluster.]
 
 Within the `security` configuration, we defined which realm is used for
 the member-to-member authentication (`kerberosRealm`).
@@ -361,7 +361,7 @@ The application should successfully connect to the cluster and data operations
 should work.
 
 .Screenshot - Client Console Demo Application
-image::screenshots/client-running.png[Running the client demo application.]
+image::client-running.png[Running the client demo application.]
 
 == Troubleshooting
 
