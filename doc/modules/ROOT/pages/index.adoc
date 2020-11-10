@@ -175,7 +175,7 @@ Starting Hazelcast members on both servers should now result in forming
 a new Hazelcast cluster with both members.
 
 .Screenshot - Running Hazelcast cluster
-image::client-running.png[Running Hazelcast cluster.]
+image::two-members-cluster.png[Running Hazelcast cluster.]
 
 Within the `security` configuration, we defined which realm is used for
 the member-to-member authentication (`kerberosRealm`).
